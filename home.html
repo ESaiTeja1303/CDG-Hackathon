@@ -226,15 +226,15 @@
     /* ====== Sample products data ====== */
     const products = [
       {id:1,title:' Nike AirRunner Sneakers',category:'Shoes',price:2999,old:3999,img:'./assets/Footwear/f1.png',deal:true,dealEnds:Date.now()+6e5},
-      {id:2,title:'Men\'s Comfy Hoodie',category:'Clothing',subcategory:'Men',price:1299,old:0,img:'https://picsum.photos/id/1011/600/400',deal:false},
+      {id:2,title:'Men\'s Comfy Hoodie',category:'Fashion',subcategory:'Men',price:1299,old:0,img:'./assets/Fashion/Men/m5.png',deal:false},
       {id:3,title:'Smartwatch Z',category:'Gadgets',price:4999,old:5999,img:'./assets/Gadgets/sm.png',deal:true,dealEnds:Date.now()+36e5},
       {id:4,title:'Classic Watch',category:'Gadgets',price:2499,old:2999,img:'./assets/Gadgets/cw.png',deal:false},
       {id:5,title:'Leather Wallet',category:'Accessories',price:499,old:799,img:'./assets/Accessories/lw.png',deal:true,dealEnds:Date.now()+9e5},
-      {id:6,title:'Running Socks (3 pack)',category:'Accessories',price:299,old:0,img:'https://picsum.photos/id/1005/600/400',deal:false},
-      {id:7,title:'Women\'s Denim Jacket',category:'Clothing',subcategory:'Women',price:3499,old:3999,img:'./assets/Fashion/Women/W4.png',deal:false},
+      {id:6,title:'Running Socks (3 pack)',category:'Accessories',price:299,old:0,img:'./assets/Accessories/sock.png',deal:false},
+      {id:7,title:'Women\'s Denim Jacket',category:'Fashion',subcategory:'Women',price:3499,old:3999,img:'./assets/Fashion/Women/W4.png',deal:false},
       {id:8,title:'Noise Cancelling Headphones',category:'Gadgets',price:6999,old:8999,img:'https://picsum.photos/id/180/600/400',deal:true,dealEnds:Date.now()+2e6},
       {id:9,title:'Sunglasses',category:'Accessories',price:899,old:1299,img:'./assets/Accessories/sg.png',deal:false},
-      {id:10,title:'Kids\' Graphic Tee',category:'Clothing',subcategory:'Kids',price:799,old:999,img:'https://picsum.photos/id/1020/600/400',deal:false},
+      {id:10,title:'Kids\' Graphic Tee',category:'Fashion',subcategory:'Kids',price:799,old:999,img:'./assets/Fashion/Kids/k5.png',deal:false},
       {id:11,title:'Puma Men Shoe',category:'Shoes',price:2499,old:2999,img:'./assets/Footwear/f2.png',deal:false},
       {id:12,title:'Nike Jordans',category:'Shoes',price:2499,old:2999,img:'./assets/Footwear/f3.png',deal:false},
       {id:13,title:'Puma Sneakers',category:'Shoes',price:2499,old:2999,img:'./assets/Footwear/f4.png',deal:false},
@@ -244,10 +244,17 @@
       {id:17,title:'Women Puma',category:'Shoes',price:2499,old:2999,img:'./assets/Footwear/f8.png',deal:false},
       {id:18,title:'Kids Shoe',category:'Shoes',price:2499,old:2999,img:'./assets/Footwear/f9.png',deal:false},
       {id:19,title:'Kids Girls shoe',category:'Shoes',price:2499,old:2999,img:'./assets/Footwear/f10.png',deal:false},
-      {id:20,title:'Women\'s Dress',category:'Clothing',subcategory:'Women',price:3499,old:5000,img:'./assets/Fashion/Women/W1.png',deal:false},
-      {id:21,title:'Women\'s Saree',category:'Clothing',subcategory:'Women',price:1499,old:2000,img:'./assets/Fashion/Women/W2.png',deal:false},
-      {id:22,title:'Women\'s Banaras Saree',category:'Clothing',subcategory:'Women',price:1499,old:2000,img:'./assets/Fashion/Women/W3.png',deal:true,dealEnds:Date.now()+9e5},
-
+      {id:20,title:'Women\'s Dress',category:'Fashion',subcategory:'Women',price:3499,old:5000,img:'./assets/Fashion/Women/W1.png',deal:false},
+      {id:21,title:'Women\'s Saree',category:'Fashion',subcategory:'Women',price:1499,old:2000,img:'./assets/Fashion/Women/W2.png',deal:false},
+      {id:22,title:'Women\'s Banaras Saree',category:'Fashion',subcategory:'Women',price:1499,old:2000,img:'./assets/Fashion/Women/W3.png',deal:true,dealEnds:Date.now()+9e5},
+      {id:23,title:'Men\'s Formal pants',category:'Fashion',subcategory:'Men',price:2399,old:2999,img:'./assets/Fashion/Men/m1.png',deal:false},
+      {id:24,title:'Men\'s Jeans',category:'Fashion',subcategory:'Men',price:1699,old:1999,img:'./assets/Fashion/Men/m2.png',deal:false},
+      {id:25,title:'Men\'s Casual Shirt',category:'Fashion',subcategory:'Men',price:1299,old:1500,img:'./assets/Fashion/Men/m3.png',deal:false},
+      {id:26,title:'Men\'s Formal Shirts',category:'Fashion',subcategory:'Men',price:1399,old:2500,img:'./assets/Fashion/Men/m4.png',deal:false},
+      {id:10,title:'Kids\' Dress',category:'Fashion',subcategory:'Kids',price:799,old:999,img:'./assets/Fashion/Kids/k1.png',deal:false},
+      {id:10,title:'Kids\' shirt',category:'Fashion',subcategory:'Kids',price:799,old:999,img:'./assets/Fashion/Kids/k2.png',deal:false},
+      {id:10,title:'Baby girls top',category:'Fashion',subcategory:'Kids',price:799,old:999,img:'./assets/Fashion/Kids/k3.png',deal:false},
+      {id:10,title:'Baby boys dress',category:'Fashion',subcategory:'Kids',price:799,old:999,img:'./assets/Fashion/Kids/k4.png',deal:false},
       
       
     ];
@@ -275,8 +282,8 @@
         };
         container.appendChild(el);
 
-        // Render subcategories for Clothing
-        if (c === 'Clothing' && state.category === 'Clothing') {
+        // Render subcategories for Fashion
+        if (c === 'Fashion' && state.category === 'Fashion') {
           const subcats = ['Men', 'Women', 'Kids'];
           subcats.forEach(sc => {
             const subEl = document.createElement('div');
@@ -344,7 +351,7 @@
       const q = state.query.toLowerCase();
       let list = products.filter(p=> {
         const matchesCategory = state.category === 'All' || p.category === state.category;
-        const matchesSubcategory = state.category !== 'Clothing' || !state.subcategory || p.subcategory === state.subcategory;
+        const matchesSubcategory = state.category !== 'Fashion' || !state.subcategory || p.subcategory === state.subcategory;
         const matchesPrice = p.price <= state.maxPrice;
         const matchesQuery = p.title.toLowerCase().includes(q) || p.category.toLowerCase().includes(q) || (p.subcategory && p.subcategory.toLowerCase().includes(q));
         return matchesCategory && matchesSubcategory && matchesPrice && matchesQuery;
